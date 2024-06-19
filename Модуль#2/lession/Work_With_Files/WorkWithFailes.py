@@ -51,24 +51,43 @@
 
 #------------------------------------------------------
 
-with open('file.txt', 'r', encoding='utf-8') as f:
-  content = f.read()
+# with open('file.txt', 'r', encoding='utf-8') as f:
+#   content = f.read()
 
-with open('file (2).txt', 'w', encoding='utf-8') as f:
-  f.write(content)
+# with open('file (2).txt', 'w', encoding='utf-8') as f:
+#   f.write(content)
 
-import json
+# import json
 
-books = [{
-  'title': 'Война и мир',
-  'author': 'Лев Толстой',
-  'year' : 1869},
-{
-  'title': 'Преступление и наказание',
-  'author': 'Федор Достаевский',
-  'year' : 1866}, ]
+# books = [{
+#   'title': 'Война и мир',
+#   'author': 'Лев Толстой',
+#   'year' : 1869},
+#   {
+#   'title': 'Преступление и наказание',
+#   'author': 'Федор Достаевский',
+#   'year' : 1866}, ]
 
-with open('data.json', 'w', encoding='utf-8') as json_file:
-  json.dump(books, json_file,
-            ensure_ascii=False,
-            indent=4)
+# with open('data.json', 'w', encoding='utf-8') as json_file:
+#   json.dump(books, json_file,
+#             ensure_ascii=False,
+#             indent=4)
+
+
+import random
+
+num_count = int(input('Введите количество чисел: '))
+
+numbers = [random.randint(1, 100) for _ in range(num_count)]
+
+with open ('numbers.csv', 'w', encoding='utf-8') as f:
+  for number in numbers:
+    f.write(f'{number}\n')
+
+from datetime import datetime
+
+timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+operation = input('Операция: ')
+
+with open('log.txt', 'a', encoding='utf-8') as f:
+  f.write(f'{timestamp}: {operation}\n')
