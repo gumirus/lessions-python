@@ -27,10 +27,10 @@ win = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Змейка")
 
 # Определение цветов
-white = (255, 255, 255)
-black = (0, 0, 0)
-red = (255, 0, 0)
-green = (0, 255, 0)
+WITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+COLOR_SNAKE = (0, 102, 0)
 FRAME_COLOR = (0, 255, 204)
 RECT_COLOR = (255, 255, 255)
 OTHER_RECT_COLOR = (204, 255, 255)
@@ -49,7 +49,7 @@ class Snake:
         self.length = 1
         self.positions = [((width // 2), (height // 2))]
         self.direction = random.choice([(0, -1), (0, 1), (-1, 0), (1, 0)])  
-        self.color = green
+        self.color = COLOR_SNAKE
         self.score = 0
 
     def get_head_position(self):
@@ -101,7 +101,7 @@ class Snake:
 class Apple:
     def __init__(self):
         self.position = (0, 0)
-        self.color = red
+        self.color = RED
         self.randomize_position()
 
     def randomize_position(self):
@@ -139,7 +139,7 @@ def main():
 
         # Отображение текущего счёта
         font = pygame.font.SysFont("Arial", 24)
-        score_text = font.render(f"Score: {snake.score}", True, black)
+        score_text = font.render(f"Score: {snake.score}", True, BLACK)
         win.blit(score_text, (10, 10))
 
         pygame.display.update()

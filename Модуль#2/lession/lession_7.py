@@ -2,7 +2,7 @@ import pygame
 
 pygame.init()
 
-# Constants
+#WIDTH = 500
 HEIGHT = 600
 FRAME_COLOR = (0, 255, 204)
 RECT_COLOR = (255, 255, 255)
