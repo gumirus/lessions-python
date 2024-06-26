@@ -31,6 +31,10 @@ white = (255, 255, 255)
 black = (0, 0, 0)
 red = (255, 0, 0)
 green = (0, 255, 0)
+FRAME_COLOR = (0, 255, 204)
+RECT_COLOR = (255, 255, 255)
+OTHER_RECT_COLOR = (204, 255, 255)
+HEADER_COLOR = (0, 170, 150)
 
 # Определение скорости
 clock = pygame.time.Clock()
@@ -72,6 +76,7 @@ class Snake:
         self.length = 1
         self.positions = [((width // 2), (height // 2))]
         self.direction = random.choice([(0, -1), (0, 1), (-1, 0), (1, 0)])
+        self.score = 0
 
     def draw(self, surface):
         for p in self.positions:
@@ -81,6 +86,7 @@ class Snake:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
                     self.turn((0, -1))  
@@ -105,6 +111,15 @@ class Apple:
     def draw(self, surface):
         pygame.draw.rect(surface, self.color, (self.position[0], self.position[1], block_size, block_size))
 
+def draw_grid():
+    for row in range(0, height, block_size):
+        for col in range(0, width, block_size):
+            if (row // block_size + col // block_size) % 2 == 0:
+                color = RECT_COLOR
+            else:
+                color = OTHER_RECT_COLOR
+            pygame.draw.rect(win, color, pygame.Rect(col, row, block_size, block_size))
+
 def main():
     snake = Snake()
     apple = Apple()
@@ -117,9 +132,16 @@ def main():
             snake.score += 1
             apple.randomize_position()
 
-        win.fill(black)
+        win.fill(FRAME_COLOR)
+        draw_grid()
         snake.draw(win)
         apple.draw(win)
+
+        # Отображение текущего счёта
+        font = pygame.font.SysFont("Arial", 24)
+        score_text = font.render(f"Score: {snake.score}", True, black)
+        win.blit(score_text, (10, 10))
+
         pygame.display.update()
         clock.tick(snake_speed)
 
