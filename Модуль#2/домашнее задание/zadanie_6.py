@@ -145,5 +145,22 @@ def main():
         pygame.display.update()
         clock.tick(snake_speed)
 
+# app = pygame.display.set_made((WIDTH, HEIGHT))
+# pygame.display.set_caption("Голодная змейка")
+
+# game_over = True
+# class Snake:
+#     def _init_(self, x, y):
+#         self.x = x
+#         self.y = y
+
+# def inside(self):
+#     return 0 <= self.x < COUNT_RECTS and 0 <= self.y < COUNT_RECTS
+
+# def draw_rect(color, row, column): 
+#     pygame.draw.rect(app, color, [SIZE_RECT + column * SIZE_RECT + RETURN * (column + 1),
+#                                   HEADER_RECT + row * SIZE_RECT + RETURN * (row + 1), SIZE RECT, SIZE RECT])
+# app.fill(game_over) 
+
 if __name__ == "__main__":
     main()
