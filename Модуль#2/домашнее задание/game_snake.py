@@ -23,7 +23,7 @@ clock = pygame.time.Clock()
 snake_speed = 5
 
 # Размер змейки и яблока
-block_size = 25
+block_size = 20
 
 # Класс Змейка
 class Snake:
