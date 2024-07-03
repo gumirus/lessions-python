@@ -135,4 +135,3 @@ while True:
     draw_score()
     button_rect = draw_button()
     pygame.display.flip()
-
