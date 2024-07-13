@@ -1,0 +1,11 @@
+"text" - текст
+"audio" - аудио
+"document" - документ
+"photo" - фото
+"sticker" - стикер
+"video" - видео
+"video_note" - видео в кружке
+"voice" - голосове сообщение
+"location" - геолокация
+"contact" - контакт
+"left_chat_member" - отсоединение пользователя от чата "new_chat_member" - новый пользователь чата "new_chat_photo" - новое фото чата "pinned_ "pinned_message" - закреп сообщение
