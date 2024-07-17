@@ -1,6 +1,6 @@
 # import telebot
 
-# token = '6835062044:AAFsRbl5CGo-NsgblLrLQpCQMCcH8G0bsIE'
+# token = ''
 
 # bot = telebot.TeleBot(token)
 
@@ -47,7 +47,7 @@
 
 # import telebot
 
-# TOKEN = '6835062044:AAFsRbl5CGo-NsgblLrLQpCQMCcH8G0bsIE'
+# TOKEN = ''
 
 # bot = telebot.TeleBot(TOKEN)
 
@@ -70,7 +70,7 @@
 
 import telebot
 
-Token = '6835062044:AAFsRbl5CGo-NsgblLrLQpCQMCcH8G0bsIE'
+Token = ''
 
 bot = telebot.TeleBot(Token)
 
