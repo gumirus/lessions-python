@@ -1,0 +1,8 @@
+{
+  "name": "Ruslan",
+  "age": "41",
+  "mother": {
+    "name": "Nadia",
+    "age":"65"
+  }
+}
