@@ -2,7 +2,7 @@ import telebot
 
 from weather import current_weather # импортируем данные из файла weather.py
 
-Token = '6835062044:AAFsRbl5CGo-NsgblLrLQpCQMCcH8G0bsIE'
+Token = 'от телеграмма ботОтец'
 bot = telebot.TeleBot(Token)
 
 #Обработчик команды /start
