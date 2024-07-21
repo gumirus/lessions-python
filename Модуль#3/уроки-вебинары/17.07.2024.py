@@ -1,22 +1,22 @@
-import requests
+# import requests
 
-r = requests.get('https://cataas.com/cat/says/Привет?json=true')
-print(r)
+# r = requests.get('https://cataas.com/cat/says/Привет?json=true')
+# print(r)
 
-print(r.status_code)
+# print(r.status_code)
 
-print(r.content)
+# print(r.content)
 
-print(r.json()['_id'])
+# print(r.json()['_id'])
 
-txt = 'Привет'
-print( 'https://cataas.com/cat/' + r.json()['_id'] + f'/says/{txt}')
+# txt = 'Привет'
+# print( 'https://cataas.com/cat/' + r.json()['_id'] + f'/says/{txt}')
 
 
 import requests
 import telebot
 
-token = 'токен_ботОтец'
+token = '6835062044:AAFsRbl5CGo-NsgblLrLQpCQMCcH8G0bsIE'
 bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['rand_cat'])
