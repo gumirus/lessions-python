@@ -16,7 +16,7 @@
 import requests
 import telebot
 
-token = '6835062044:AAFsRbl5CGo-NsgblLrLQpCQMCcH8G0bsIE'
+token = 'здесь  # бот от телеграмм ботОтец'
 bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['rand_cat'])
