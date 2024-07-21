@@ -7,7 +7,7 @@ bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-  bot.reply_to(message, "Добро пожаловать! Используйте команду /coffee, чтобы узнать текущую погоду.")
+  bot.reply_to(message, "Добро пожаловать! Используйте команду /coffee,")
 
 @bot.message_handler(commands=['coffee'])
 def send_coffee_photo(message):    
@@ -19,6 +19,5 @@ def send_coffee_photo(message):
     r = requests.get('https://coffee.alexflipnote.dev/random.json')
     url = r.json()['file']
     bot.send_photo(message.chat.id, url)
-
 # Запуск бота
 bot.infinity_polling()

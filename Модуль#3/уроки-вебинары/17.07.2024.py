@@ -19,6 +19,10 @@ import telebot
 token = 'здесь  # бот от телеграмм ботОтец'
 bot = telebot.TeleBot(token)
 
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+  bot.reply_to(message, "Добро пожаловать! Используйте команду /rand_cat выводит коты, /photo_with_text пишем текст с котом,/rand_duck утка, /rand_dog - собака")
+
 @bot.message_handler(commands=['rand_cat'])
 def send_rand_cat(message):
   r = requests.get( 'https://cataas.com/cat?json=true')
@@ -38,19 +42,19 @@ def send_random_photo_with_text(message) :
   url = 'https://cataas.com/cat/' + r.json()['_id'] + f'/says/{message.text}'
   bot. send_photo(message.chat.id, url)
 
-@bot.message_handler(commands=['sentiment'])
-def start(message):
-  msg = bot.send_message(message.chat.id,
-                         'Введите текст для оценки')
-  bot.register_next_step_handler(msg,
-                                 get_sentiment)
-def get_sentiment (message): 
-  data = {'x': [message.text]}
+# @bot.message_handler(commands=['sentiment'])
+# def start(message):
+#   msg = bot.send_message(message.chat.id,
+#                          'Введите текст для оценки')
+#   bot.register_next_step_handler(msg,
+#                                  get_sentiment)
+# def get_sentiment (message): 
+#   data = {'x': [message.text]}
 
-  res = requests.post('https://7034.deeppavlov.ai/model', json=data).json()
-  s = res[0][0]
-  bot.send_message(message.chat.id,
-                   f'Оценка: {s}')
+#   res = requests.post('https://7034.deeppavlov.ai/model', json=data).json()
+#   s = res[0][0]
+#   bot.send_message(message.chat.id,
+#                    f'Оценка: {s}')
   
 @bot.message_handler(commands=['rand_dog'])
 def send_rand_dog (message):
@@ -62,7 +66,7 @@ def send_rand_dog (message):
 def send_rand_duck (message):
   r = requests.get('https://random-d.uk/api/random')
   url = r.json()['url']
-  bot.send_message(message.chat.id, url)
+  bot.send_photo(message.chat.id, url)
 
 bot.infinity_polling()
 
