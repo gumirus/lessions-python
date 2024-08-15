@@ -1,0 +1,30 @@
+body {
+  background-color: rgba(128, 128, 128, 0.819);
+  text-align: center;
+  max-width: 750px;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 8px 7px 23px;
+  background-image: url(https://bannerplus.ru/files/img/pics/kartinka-k-skazke-u-lukomoria-dub-zelenyi/kartinka-k-skazke-u-lukomoria-dub-zelenyi-71.webp);
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.card {
+  border-radius: 10px;
+  background: rgba(187, 184, 131, 0.684);
+  padding: 7px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.synergy {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
